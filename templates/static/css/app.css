@@ -3878,12 +3878,16 @@ button {
   padding: 50px;
   min-height:110%;
   margin: auto auto 30px auto;
-  vertical-align: bottom;
 }
 
 #sitdown {
   position: absolute;
   bottom: 120;
+  z-index: -1;
+}
+.tabs {
+  overflow:auto;
+  background-color: #eaeaea;
 }
 .tablinks, .intabs{
   display:inline-block;

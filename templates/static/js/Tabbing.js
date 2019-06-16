@@ -3,6 +3,9 @@ function clickcall(event){
     if(event.target.id == "home"){
       document.location.href = "http://localhost:5000/"
     }
+    else if(event.target.id == "info"){
+      document.location.href = "http://localhost:5000/info"
+    }
     else {
       var loc = "http://localhost:5000/risk/" + event.target.id
       //var loc = "http://72.213.55.30:5000/risk/" + event.target.id
@@ -10,4 +13,4 @@ function clickcall(event){
       document.location.href = loc
     }
 }
-  $(document).on('click', '.tablinks', clickcall);
+$(document).on('click', '.tablinks', clickcall);

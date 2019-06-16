@@ -1,5 +1,5 @@
 from flask import Flask, request, send_from_directory, render_template
-app = Flask(__name__, template_folder='.', static_folder='static')
+app = Flask(__name__, template_folder='./templates/', static_folder='./templates/static')
 
 import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -7,6 +7,10 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 @app.route('/')
 def hello_world():
     return render_template("welcome.html")
+
+@app.route('/info')
+def info():
+    return render_template("info.html")
 
 @app.route('/static/<path>')
 def send_static(path):
