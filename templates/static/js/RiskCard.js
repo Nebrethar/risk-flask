@@ -47,6 +47,10 @@ window.onload = function(){
                 });
                 document.getElementById("lcBtn").addEventListener("click", function(){
                   $.getJSON( "./scans/"+owner+"-"+repo+".json", function( data ) {
+                    datalast = data.slice(Math.max(data.length - 3, 1))
+                    document.getElementById('analysis').innerHTML = "Total Files in the repository: " + datalast[1]["Total Files"] + "<br>" + "Files with declared licenses: " + datalast[1]["License-Declared Files"] + "<br>" + "License Coverage: " + datalast[1]["Percent Total Coverage"] + "<br>"
+                    console.log(datalast)
+                    console.log(datalast[1]["Total Files"])
                     populate = document.getElementById("populate");
                     populate.parentNode.removeChild(populate);
                     //Retrieve raw data
